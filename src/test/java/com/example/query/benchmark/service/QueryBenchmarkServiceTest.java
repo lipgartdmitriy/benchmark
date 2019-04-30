@@ -2,6 +2,7 @@ package com.example.query.benchmark.service;
 
 import com.example.query.benchmark.BenchmarkApplication;
 import com.example.query.benchmark.common.QueryBenchmarkResult;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import java.util.List;
 public class QueryBenchmarkServiceTest {
 
     @Autowired
-    private QueryBenchmarkService queryBenchmarkService;
+    private QueryBenchmarkServiceImpl queryBenchmarkService;
 
     @Test
     public void testQuery() {
@@ -26,5 +27,6 @@ public class QueryBenchmarkServiceTest {
             System.out.println(queryBenchmarkResult.getDbName());
             System.out.println(queryBenchmarkResult.getTime());
         }
+        Assert.assertEquals(2, queryBenchmarkResults.size());
     }
 }
