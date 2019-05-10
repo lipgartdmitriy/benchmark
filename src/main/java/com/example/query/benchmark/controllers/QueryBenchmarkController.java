@@ -24,5 +24,4 @@ public class QueryBenchmarkController {
     public List<QueryBenchmarkResult> getQueryBenchmarkResult(@RequestParam(value = "query") String query) {
         return benchmarkService.testQuery(query);
     }
-
 }
