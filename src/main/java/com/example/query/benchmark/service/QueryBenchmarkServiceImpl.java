@@ -37,7 +37,6 @@ public class QueryBenchmarkServiceImpl implements QueryBenchmarkService {
         for (SQLRepository repository : repositories) {
             tasks.add(new QueryBenchmarkRecursiveAction(query, repository, repository.getClass().getSimpleName()));
         }
-
         ForkJoinTask.invokeAll(tasks);
         return results;
     }
